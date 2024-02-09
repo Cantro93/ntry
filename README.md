@@ -2,6 +2,8 @@
 
 This library defines new entrypoints designed for usage in C++ programs:
 
+> NOTE: <vector> is loaded automatically
+
 ## `ntry`
 ```cpp
 int ntry(vector<string> args, string cwd);
