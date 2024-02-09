@@ -1,0 +1,26 @@
+#include <vector>
+#include <string>
+#include <direct.h>
+
+using namespace std;
+
+#ifndef _NTRY_
+#define _NTRY_
+
+int msntry(vector<string> args, string cwd, vector<string> envs);
+
+int wmain(int argc, char* argv[], char* envp[])
+{
+    vector<string> args, envs;
+    string cwd;
+    int c = 0;
+    args.reserve(argc);
+    envs.reserve(1);
+    for (int i = 0; i < argc; i++) args.push_back(argv[i]);
+    while (envp[c] != nullptr) envs.push_back(envp[c]);
+    cwd = _getcwd(0, 0);
+    return msntry(args, cwd, envs);
+}
+
+#endif //ndef _NTRY_
+
